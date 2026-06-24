@@ -4,6 +4,7 @@ import ba.sum.fsre.diplomski.maze.agent.*;
 import ba.sum.fsre.diplomski.maze.algorithm.ManhattanHeuristic;
 import ba.sum.fsre.diplomski.maze.algorithm.EuclideanHeuristic;
 import ba.sum.fsre.diplomski.maze.algorithm.SearchResult;
+import ba.sum.fsre.diplomski.maze.generator.DFSMazeGenerator;
 import ba.sum.fsre.diplomski.maze.generator.ImperfectMazeGenerator;
 import ba.sum.fsre.diplomski.maze.generator.MazeGenerator;
 import ba.sum.fsre.diplomski.maze.model.Maze;
@@ -110,10 +111,10 @@ public class Experiment1Runner {
 
         try {
             QLearningConfig config = new QLearningConfig(
-                    0.1,
+                    0.5,
                     0.95,
                     1.0,
-                    0.995,
+                    0.990,
                     0.01,
                     size * size * 10,  // maxStepsPerEpisode, proporcionalno dimenziji
                     Experiment1Config.Q_LEARNING_TRAIN_EPISODES

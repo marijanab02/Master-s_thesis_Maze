@@ -47,7 +47,7 @@ public class DFSAgent implements Agent {
 
             nodesExplored++;
 
-            System.out.printf("Korak %d: Posjećujem ćeliju (%d, %d)%n", nodesExplored, current.getRow(), current.getCol());
+            // System.out.printf("Korak %d: Posjećujem ćeliju (%d, %d)%n", nodesExplored, current.getRow(), current.getCol());
 
             if (current.equals(goal)) {
 

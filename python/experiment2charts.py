@@ -9,8 +9,8 @@ import os
 
 #Konfiguracija
 
-CSV_PATH   = "experiment2_1000ep_raw.csv"
-OUTPUT_DIR = "charts_Q_learning"
+CSV_PATH   = "experiment2_1000ep_30ms_raw.csv"
+OUTPUT_DIR = "charts_Q_learning_200ep_30ms"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
@@ -196,7 +196,20 @@ print(f"{out}")
 # Graf 5: Stopa uspjeha (% epizoda u kojima je agent dostigao cilj)
 # Smoothing za success rate
 SMOOTH = 100
-
+# 12 jedinstvenih boja za sve α×γ kombinacije
+import itertools
+COMBO_COLORS = {
+    (a, g): c
+    for (a, g), c in zip(
+        [(a, g) for a in ALPHAS for g in GAMMAS],
+        [
+            "#E53935", "#D81B60", "#8E24AA",
+            "#1E88E5", "#00ACC1", "#00897B",
+            "#43A047", "#C0CA33", "#FB8C00",
+            "#6D4C41", "#546E7A", "#3949AB",
+        ]
+    )
+}
 fig, axes = plt.subplots(1, 3, figsize=(17, 5), sharey=True)
 fig.suptitle(
     "Stopa uspjeha (% epizoda s dostignutim ciljem) - po α×γ kombinacijama",
@@ -219,6 +232,7 @@ for ax, strategy in zip(axes, STRATEGIES):
             sr = data["successRate"].rolling(SMOOTH, min_periods=1).mean()
             ax.plot(data["episode"], sr,
                     linewidth=1.2, alpha=0.75,
+                    color=COMBO_COLORS[(alpha, gamma)],
                     label=f"α={alpha},γ={gamma}")
 
     ax.set_title(strategy, fontsize=10)

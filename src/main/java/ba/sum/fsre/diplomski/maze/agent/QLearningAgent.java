@@ -75,7 +75,7 @@ public class QLearningAgent implements Agent {
                     break;
                 }
             }
-            if (episode == 0 || episode == 50 || episode == 100 || episode == 500 || episode == 1000 || episode == config.getEpisodes()-1)
+            if (episode == 0 || episode == 50 || episode == 100 || episode == 200 || episode == 500)
             {
                 savedEpisodes.add(new EpisodeReplay(episode, new ArrayList<>(episodePath), totalReward, steps));
             }

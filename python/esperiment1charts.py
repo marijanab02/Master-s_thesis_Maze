@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-CSV_PATH   = "experiment1_aggregated.csv"
-OUTPUT_DIR = "charts"
+CSV_PATH   = "experiment1_new3imp_5000ep_maze_aggregated.csv"
+OUTPUT_DIR = "chartsnew3imp"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 STYLE = {

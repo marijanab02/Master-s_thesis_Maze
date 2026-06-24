@@ -6,7 +6,7 @@ package ba.sum.fsre.diplomski.maze.experiment;
 public class Experiment2Config {
 
     // Dimenzija labirinta
-    public static final int MAZE_SIZE = 10;
+    public static final int MAZE_SIZE = 30;
 
     //Svi testovi na istom labirintu
     public static final long MAZE_SEED = 42L;
@@ -34,7 +34,7 @@ public class Experiment2Config {
     };
 
     public static final String RESULTS_DIR = "results";
-    public static final String CSV_FILE = RESULTS_DIR + "/experiment2_1000ep_raw.csv";
+    public static final String CSV_FILE = RESULTS_DIR + "/experiment2_1000ep_30ms_raw.csv";
 
     private Experiment2Config() {}
 
